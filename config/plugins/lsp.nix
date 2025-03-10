@@ -38,6 +38,7 @@
       enable = true;
       settings.offset_encoding = "utf-8";
     };
+    ts_ls.enable = true;
     pyright.enable = true;
   };
 }
