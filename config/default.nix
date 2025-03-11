@@ -17,11 +17,9 @@
     };
   };
 
-  files."ftplugin/nix.lua" = {
-    opts.expandtab = true;
-    opts.shiftwidth = 2;
-    opts.tabstop = 2;
-  };
+  imports = [
+    ./files.nix
+  ];
 
   globals = {
     mapleader = " ";
