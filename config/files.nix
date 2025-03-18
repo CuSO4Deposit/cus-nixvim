@@ -1,6 +1,12 @@
 {
 
-  files."ftplugin/js.lua" = {
+  files."ftplugin/javascript.lua" = {
+    opts.expandtab = true;
+    opts.shiftwidth = 2;
+    opts.tabstop = 2;
+  };
+
+  files."ftplugin/json.lua" = {
     opts.expandtab = true;
     opts.shiftwidth = 2;
     opts.tabstop = 2;
@@ -12,13 +18,13 @@
     opts.tabstop = 2;
   };
 
-  files."ftplugin/ts.lua" = {
+  files."ftplugin/typescript.lua" = {
     opts.expandtab = true;
     opts.shiftwidth = 2;
     opts.tabstop = 2;
   };
 
-  files."ftplugin/tsx.lua" = {
+  files."ftplugin/typescriptreact.lua" = {
     opts.expandtab = true;
     opts.shiftwidth = 2;
     opts.tabstop = 2;
