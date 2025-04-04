@@ -32,13 +32,17 @@
     };
   };
   servers = {
-    clangd.enable = true;
+    clangd = {
+      enable = true;
+      filetypes = [ "c" "cpp" "objc" "objcpp" "cuda" ];
+    };
     nixd.enable = true;
     tinymist = {
       enable = true;
       settings.offset_encoding = "utf-8";
     };
     ts_ls.enable = true;
+    protols.enable = true;
     pyright.enable = true;
   };
 }

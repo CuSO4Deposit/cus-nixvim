@@ -75,6 +75,10 @@
     value = import "${path}/${name}.nix";
   }) pluginNames);
 
+  extraPackages = with pkgs; [
+    protobuf
+  ];
+
   extraPlugins = with pkgs.vimPlugins; [
   ];
 }
