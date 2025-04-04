@@ -1,4 +1,4 @@
-{
+{ pkgs-stable }: {
   enable = true;
   keymaps = {
     diagnostic = {
@@ -35,6 +35,12 @@
     clangd = {
       enable = true;
       filetypes = [ "c" "cpp" "objc" "objcpp" "cuda" ];
+    };
+    hls = let 
+    in {
+      enable = true;
+      ghcPackage = pkgs-stable.ghc;
+      installGhc = true;
     };
     nixd.enable = true;
     tinymist = {

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   autoCmd = [
@@ -58,7 +58,6 @@
       "comment"
       "illuminate"
       "indent-blankline"
-      "lsp"
       "lspkind"
       "lualine"
       "luasnip"
@@ -73,7 +72,7 @@
   builtins.listToAttrs (map (name: {
     name = name;
     value = import "${path}/${name}.nix";
-  }) pluginNames);
+  }) pluginNames) // { lsp = (import ./plugins/lsp.nix) { pkgs-stable = pkgs-stable; }; };
 
   extraPackages = with pkgs; [
     protobuf
