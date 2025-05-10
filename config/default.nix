@@ -29,6 +29,7 @@
     ambiwidth = "double"; # show east asian char as double width
     autochdir = true; # auto change shell dir when file changes
     autoindent = true;
+    cindent = true;
     clipboard = "unnamed"; # use register "+"
     cursorcolumn = true; # highlight current column
     cursorline = true; # highlight current line
@@ -40,7 +41,6 @@
     relativenumber = true; # show line number relative to cursor
     ruler = true; # show line and column number of cursor
     shiftwidth = 4; # tabstop
-    smartindent = true;
     tabstop = 4;
     title = true;
   };
