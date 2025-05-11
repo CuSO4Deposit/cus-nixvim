@@ -1,4 +1,4 @@
-{ pkgs-stable }: {
+{
   enable = true;
   keymaps = {
     diagnostic = {
@@ -39,7 +39,6 @@
     hls = let 
     in {
       enable = true;
-      ghcPackage = pkgs-stable.ghc;
       installGhc = true;
     };
     nixd.enable = true;

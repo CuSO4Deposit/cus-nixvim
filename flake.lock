@@ -115,22 +115,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1743576891,
-        "narHash": "sha256-vXiKURtntURybE6FMNFAVpRPr8+e8KoLPrYs9TGuAKc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "44a69ed688786e98a101f02b712c313f1ade37ab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -180,7 +164,6 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim"
       }
     },
