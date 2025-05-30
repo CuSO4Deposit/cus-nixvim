@@ -8,17 +8,18 @@
     extra = [
       {
         action = {
-          __raw = ''function()
-          local float = vim.diagnostic.config().float
+          __raw = ''
+            function()
+                      local float = vim.diagnostic.config().float
 
-          if float then
-            local config = type(float) == "table" and float or {}
-            config.scope = "line"
+                      if float then
+                        local config = type(float) == "table" and float or {}
+                        config.scope = "line"
 
-            vim.diagnostic.open_float(config)
-          end
-        end'';
-          };
+                        vim.diagnostic.open_float(config)
+                      end
+                    end'';
+        };
         key = "<leader>l";
       }
     ];
@@ -34,10 +35,23 @@
   servers = {
     clangd = {
       enable = true;
-      filetypes = [ "c" "cpp" "objc" "objcpp" "cuda" ];
+      filetypes = [
+        "c"
+        "cpp"
+        "objc"
+        "objcpp"
+        "cuda"
+      ];
     };
-    hls = let 
-    in {
+    eslint = {
+      enable = true;
+      filetypes = [
+        "javascript"
+        "typescript"
+        "typescriptreact"
+      ];
+    };
+    hls = {
       enable = true;
       installGhc = true;
     };
