@@ -33,6 +33,7 @@
     };
   };
   servers = {
+    beancount.enable = true;
     clangd = {
       enable = true;
       filetypes = [
@@ -52,7 +53,7 @@
       ];
     };
     hls = {
-      enable = true;
+      enable = false;
       installGhc = true;
     };
     nixd.enable = true;
