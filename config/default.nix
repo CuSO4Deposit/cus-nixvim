@@ -4,7 +4,10 @@
   autoCmd = [
     {
       command = "set filetype=markdown";
-      event = [ "BufNewFile" "BufRead" ];
+      event = [
+        "BufNewFile"
+        "BufRead"
+      ];
       pattern = [ "*.Avante" ];
     }
   ];
@@ -45,40 +48,45 @@
     title = true;
   };
 
-  plugins = let
-    path = ./plugins;
-    pluginNames = [
-      "avante"
-      "autoclose"
-      "cmp"
-      "cmp-buffer"
-      "cmp-nvim-lsp"
-      "cmp-path"
-      "cmp_luasnip"
-      "comment"
-      "illuminate"
-      "indent-blankline"
-      "lsp"
-      "lspkind"
-      "lualine"
-      "luasnip"
-      # "markview" # for avante.nvim. It doesn't work, why?
-      # "nvim-surround" # not introduced in 24.05
-      "rainbow-delimiters"
-      "typst-vim"
-      "treesitter"
-      "wakatime"
-    ];
-  in
-  builtins.listToAttrs (map (name: {
-    name = name;
-    value = import "${path}/${name}.nix";
-  }) pluginNames);
+  plugins =
+    let
+      path = ./plugins;
+      pluginNames = [
+        "avante"
+        "autoclose"
+        "cmp"
+        "cmp-buffer"
+        "cmp-nvim-lsp"
+        "cmp-path"
+        "cmp_luasnip"
+        "comment"
+        "illuminate"
+        "indent-blankline"
+        "lsp"
+        "lspkind"
+        "lualine"
+        "luasnip"
+        # "markview" # for avante.nvim. It doesn't work, why?
+        # "nvim-surround" # not introduced in 24.05
+        "rainbow-delimiters"
+        "typst-vim"
+        "treesitter"
+        "wakatime"
+      ];
+    in
+    builtins.listToAttrs (
+      map (name: {
+        name = name;
+        value = import "${path}/${name}.nix";
+      }) pluginNames
+    );
 
   extraPackages = with pkgs; [
     protobuf
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
+    vim-beancount
+    cmp-beancount
   ];
 }
