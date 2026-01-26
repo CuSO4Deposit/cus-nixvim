@@ -53,10 +53,16 @@
       ];
     };
     hls = {
-      enable = false;
-      installGhc = true;
+      enable = true;
+      installGhc = false;
+      package = null;
     };
     nixd.enable = true;
+    rust_analyzer = {
+      enable = true;
+      installCargo = true;
+      installRustc = true;
+    };
     tinymist = {
       enable = true;
       settings.offset_encoding = "utf-8";
