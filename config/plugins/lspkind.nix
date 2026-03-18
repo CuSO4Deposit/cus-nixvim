@@ -1,9 +1,11 @@
 {
   enable = true;
-  mode = "symbol_text";
-  cmp = {
-    enable = true;
-    maxWidth = 50;
-    ellipsisChar = "...";
+  settings = {
+    mode = "symbol_text";
+    cmp = {
+      enable = true;
+      max_width = 50;
+      ellipsis_char = "...";
+    };
   };
 }
