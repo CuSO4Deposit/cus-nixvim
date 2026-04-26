@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
+    nur-packages = {
+      url = "github:CuSO4Deposit/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.pre-commit-hooks.follows = "pre-commit-hooks";
+    };
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
   };
 
@@ -25,22 +30,23 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          config = import ./config;
+          config = import ./config {
+            inherit pkgs;
+            racketLanguageServer = inputs.nur-packages.packages.${system}.racket-language-server;
+          };
           nixvim' = nixvim.legacyPackages."${system}";
           nvim = nixvim'.makeNixvim config;
         in
         {
           checks = {
-            inherit inputs system;
             pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
               src = ./.;
               hooks = {
-                nixfmt-rfc-style.enable = true;
+                nixfmt.enable = true;
               };
             };
           };
           devShells = {
-            inherit system;
             default = pkgs.mkShell {
               inherit (self.checks.${system}.pre-commit-check) shellHook;
               buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;

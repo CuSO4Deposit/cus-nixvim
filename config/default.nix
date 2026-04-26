@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, racketLanguageServer, ... }:
 
 {
   autoCmd = [
@@ -77,7 +77,11 @@
     builtins.listToAttrs (
       map (name: {
         name = name;
-        value = import "${path}/${name}.nix";
+        value =
+          if name == "lsp" then
+            import "${path}/${name}.nix" { inherit racketLanguageServer; }
+          else
+            import "${path}/${name}.nix";
       }) pluginNames
     );
 

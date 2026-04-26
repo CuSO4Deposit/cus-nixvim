@@ -1,3 +1,5 @@
+{ racketLanguageServer }:
+
 {
   enable = true;
   keymaps = {
@@ -70,5 +72,9 @@
     ts_ls.enable = true;
     protols.enable = true;
     pyright.enable = true;
+    racket_langserver = {
+      enable = true;
+      package = racketLanguageServer;
+    };
   };
 }
