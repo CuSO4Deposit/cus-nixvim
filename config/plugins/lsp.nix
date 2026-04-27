@@ -74,6 +74,7 @@
     pyright.enable = true;
     racket_langserver = {
       enable = true;
+      cmd = [ "${racketLanguageServer}/bin/racket-langserver" ];
       package = racketLanguageServer;
     };
   };
