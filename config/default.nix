@@ -52,7 +52,6 @@
     let
       path = ./plugins;
       pluginNames = [
-        "avante"
         "autoclose"
         "cmp"
         "cmp-buffer"
@@ -66,8 +65,7 @@
         "lspkind"
         "lualine"
         "luasnip"
-        # "markview" # for avante.nvim. It doesn't work, why?
-        # "nvim-surround" # not introduced in 24.05
+        "nvim-surround"
         "rainbow-delimiters"
         "typst-vim"
         "treesitter"
