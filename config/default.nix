@@ -67,9 +67,11 @@
         "luasnip"
         "nvim-surround"
         "rainbow-delimiters"
+        "telescope"
         "typst-vim"
         "treesitter"
         "wakatime"
+        "web-devicons" # for telescope
       ];
     in
     builtins.listToAttrs (
