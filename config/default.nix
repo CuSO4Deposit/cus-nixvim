@@ -72,6 +72,7 @@
         "treesitter"
         "wakatime"
         "web-devicons" # for telescope
+        "zig"
       ];
     in
     builtins.listToAttrs (
