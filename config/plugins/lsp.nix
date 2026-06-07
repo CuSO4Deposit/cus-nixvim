@@ -35,7 +35,10 @@
     };
   };
   servers = {
-    beancount.enable = true;
+    beancount = {
+      enable = true;
+      package = null;
+    };
     clangd = {
       enable = true;
       filetypes = [
@@ -68,14 +71,22 @@
     tinymist = {
       enable = true;
       settings.offset_encoding = "utf-8";
+      package = null;
     };
     ts_ls.enable = true;
-    protols.enable = true;
+    protols = {
+      enable = true;
+      package = null;
+    };
     pyright.enable = true;
     racket_langserver = {
       enable = true;
       cmd = [ "${racketLanguageServer}/bin/racket-langserver" ];
       package = racketLanguageServer;
+    };
+    zls = {
+      enable = true;
+      package = null;
     };
   };
 }
