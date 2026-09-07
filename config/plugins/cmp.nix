@@ -7,11 +7,14 @@
       { name = "luasnip"; }
       { name = "buffer"; }
       { name = "path"; }
+      { name = "minuet"; }
       # { name = "cmdline"; } # This is causing unwanted completions. See
       # https://github.com/hrsh7th/nvim-cmp/issues/1324
     ];
+    performance.fetching_timeout = 2000;
     mapping = {
       "<Enter>" = "cmp.mapping.confirm({ select = false })";
+      "<F5>" = "require('minuet').make_cmp_map()";
       "<S-Tab>" = ''
                 cmp.mapping(function(fallback)
                   local luasnip = require 'luasnip'

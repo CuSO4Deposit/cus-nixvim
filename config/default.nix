@@ -65,6 +65,7 @@
         "lspkind"
         "lualine"
         "luasnip"
+        "minuet"
         "nvim-surround"
         "rainbow-delimiters"
         "telescope"
